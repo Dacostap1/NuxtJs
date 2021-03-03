@@ -20,6 +20,7 @@
         >
           GitHub
         </a>
+        <NuxtLink to="/contact" class="button--grey">Contactenos</NuxtLink>
       </div>
     </div>
   </div>
