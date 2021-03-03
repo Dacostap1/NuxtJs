@@ -1,6 +1,11 @@
 <template>
-  <h1>xd</h1>
+  <div>
+    <h1>xd</h1>
+    <Nuxt />
+  </div>
 </template>
 <script>
-export default {}
+export default {
+  layout: 'contact',
+}
 </script>
