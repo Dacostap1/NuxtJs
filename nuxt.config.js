@@ -34,6 +34,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxt/content',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
   ],
