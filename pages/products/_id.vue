@@ -5,7 +5,6 @@
 </template>
 <script>
 export default {
-  props: ['id'],
   async asyncData({ $axios, params }) {
     console.log(params)
     const product = await $axios.$get(

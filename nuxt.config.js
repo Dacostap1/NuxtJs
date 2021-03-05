@@ -8,7 +8,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'mi primer blog' }, //Importante SEO
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -17,7 +17,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/seo.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,7 +37,14 @@ export default {
     '@nuxt/content',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    ['@nuxtjs/markdownit', { html: true, injected: true }],
+    '@nuxtjs/sitemap',
   ],
+
+  sitemap: {
+    hostname: process.env.HOST_NAME,
+    routes: [], // all the dynamic routes
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
