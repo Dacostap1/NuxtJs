@@ -41,6 +41,13 @@ export default {
     '@nuxtjs/sitemap',
   ],
 
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    exposeConfig: false,
+    config: {},
+  },
+
   sitemap: {
     hostname: process.env.HOST_NAME,
     routes: [], // all the dynamic routes
