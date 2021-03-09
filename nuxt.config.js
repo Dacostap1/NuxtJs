@@ -2,6 +2,29 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  loading: {
+    color: 'DodgerBlue',
+    height: '10px',
+    continuous: true,
+    duration: 3000,
+  },
+
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    beforeEnter(el) {
+      console.log('Before enter page...')
+    },
+  },
+
+  layoutTransition: {
+    name: 'layout',
+    mode: 'out-in',
+    beforeEnter(el) {
+      console.log('Before enter layout...')
+    },
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'my-first-nuxt',
