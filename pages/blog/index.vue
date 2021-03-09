@@ -1,7 +1,7 @@
 <template>
   <div class="mt-4">
     <section>
-      <div class="container mx-auto px-4">
+      <div>
         <h1 class="text-4xl font-bold">Articles</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
           <ArticleCard
@@ -17,10 +17,11 @@
 </template>
 <script>
 export default {
+  layout: 'blog',
+  // middleware: 'auth',
+  transition: 'fade',
   async asyncData({ $axios }) {
-    const products = await $axios.$get(
-      'https://my-json-server.typicode.com/dacostap1/demo/products'
-    )
+    const products = await $axios.$get('http://localhost:1337/blogs')
     return { products }
   },
 }

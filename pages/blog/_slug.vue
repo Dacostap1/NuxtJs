@@ -1,11 +1,11 @@
 <template>
-  <div class="container mx-auto px-4 mt-4">
+  <div class="px-4 mt-4">
     <header>
       <h2 class="text-5xl">{{ article.name }}</h2>
       <div class="flex items-center mt-6">
         <img
           class="w-20 rounded-full border-4 border-main"
-          :src="article.images[0].image"
+          :src="`http://localhost:1337${article.image[0].url}`"
           :alt="article.name"
         />
         <div class="ml-6">
@@ -25,22 +25,23 @@
         >{{ tag.name }}</nuxt-link
       >
     </div>
-    <div v-html="$md.render(article.content)" class="mt-8"></div>
+    <div v-html="$md.render(article.content)" class="prose mt-8"></div>
   </div>
 </template>
 <script>
 import kebabCase from 'lodash/kebabCase'
 import { createSEOMeta } from '@/plugins/seo'
 export default {
+  layout: 'blog',
   head() {
     // SEO por página
-    const { name, content, images } = this.article
+    const { name, content, image } = this.article
     return {
       title: name,
       meta: createSEOMeta({
         title: name,
         description: content,
-        image: images[0].image,
+        image: image[0].url,
         url: 'xd',
       }),
     }
@@ -55,7 +56,7 @@ export default {
   },
   async asyncData({ $axios, params }) {
     const article = await $axios.$get(
-      `https://my-json-server.typicode.com/dacostap1/demo/products/${params.slug}`
+      `http://localhost:1337/blogs/${params.slug}`
     )
 
     console.log(process.env.HOST_NAME)
