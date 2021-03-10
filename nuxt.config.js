@@ -64,6 +64,7 @@ export default {
     '@nuxtjs/pwa',
     ['@nuxtjs/markdownit', { html: true, injected: true }],
     '@nuxtjs/sitemap',
+    'nuxt-vue-select',
   ],
 
   tailwindcss: {

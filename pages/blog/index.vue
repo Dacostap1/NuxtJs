@@ -13,6 +13,13 @@
         </div>
       </div>
     </section>
+    <div class="bg-white mt-2 border-black w-30">
+      <v-select
+        :options="options"
+        label="Selecciona algo"
+        placeholder="Selecciona algo"
+      />
+    </div>
   </div>
 </template>
 <script>
@@ -20,9 +27,15 @@ export default {
   layout: 'blog',
   // middleware: 'auth',
   transition: 'fade',
+
   async asyncData({ $axios }) {
     const products = await $axios.$get('http://localhost:1337/blogs')
     return { products }
+  },
+  data() {
+    return {
+      options: ['foo', 'bar', 'baz'],
+    }
   },
 }
 </script>
