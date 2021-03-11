@@ -90,15 +90,12 @@
               </nuxt-link>
 
               <a
+                v-if="$auth.user && $auth.user.user.is_super_admin"
                 href="#"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >Projects</a
+                >Admin</a
               >
-              <a
-                href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >Calendar</a
-              >
+
               <SearchBox
                 :search="fetchSuggestions"
                 class="flex-1 max-w-sm ml-12"
@@ -182,6 +179,7 @@
                 href="#"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem"
+                @click="$auth.logout()"
                 >Sign out</a
               >
             </div>

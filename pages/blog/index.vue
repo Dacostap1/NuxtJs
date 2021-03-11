@@ -13,6 +13,8 @@
         </div>
       </div>
     </section>
+    <div v-if="$auth.loggedIn">loageado</div>
+    <div v-else>No loageado</div>
     <div class="bg-white mt-2 border-black w-30">
       <v-select
         :options="options"
@@ -24,8 +26,13 @@
 </template>
 <script>
 export default {
-  layout: 'blog',
-  // middleware: 'auth',
+  layout: 'nav',
+  middleware: ['auth-admin'],
+
+  meta: {
+    permissions: ['read-blog'],
+  },
+
   transition: 'fade',
 
   async asyncData({ $axios }) {

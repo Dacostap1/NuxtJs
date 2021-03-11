@@ -18,6 +18,7 @@
 </template>
 <script>
 export default {
+  layout: 'nav',
   async asyncData({ $axios }) {
     const products = await $axios.$get(
       'https://my-json-server.typicode.com/iosamuel/demo/products'

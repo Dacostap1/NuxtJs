@@ -44,7 +44,12 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
-    dirs: ['~/components', '~/components/ui', '~/components/layout'],
+    dirs: [
+      '~/components',
+      '~/components/ui',
+      '~/components/layout',
+      '~/components/app',
+    ],
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -59,6 +64,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     '@nuxt/content',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
@@ -80,7 +86,22 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    credentials: true,
+  },
+
+  auth: {
+    scopeKey: 'user.permissions',
+    strategies: {
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: 'http://localhost:8000',
+        endpoints: {
+          login: { url: '/login' },
+        },
+      },
+    },
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
