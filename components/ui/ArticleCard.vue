@@ -1,27 +1,38 @@
 <template>
-  <div class="container">
-    <div class="bg-white rounded overflow-hidden shadow-md">
-      <nuxt-link
-        class="block text-gray-800 rounded-lg shadow-lg p-6"
-        :to="`/blog/${article.id}`"
-      >
-        <header class="text-2xl font-bold">{{ article.title }}</header>
-        <p class="mt-4">
-          {{ article.content }}
-        </p>
-        <footer class="flex items-center mt-6">
-          <img
-            class="w-20 rounded-full border-4 border-main"
-            :src="image"
-            :alt="article.name"
-          />
-          <div class="ml-6">
-            <p class="text-xl font-bold">{{ article.title }}</p>
-            <p class="text-sm mt-1">{{ article.title }}</p>
+  <div
+    class="max-w-2xl bg-white border-2 border-gray-300 p-5 rounded-md tracking-wide shadow-lg"
+  >
+    <nuxt-link :to="`/blog/${article.id}`">
+      <div class="flex">
+        <img
+          class="w-40 rounded-md border-2 border-gray-300"
+          :src="image"
+          :alt="article.name"
+        />
+        <div id="body" class="flex flex-col ml-5">
+          <h4 class="text-xl font-semibold mb-2">
+            {{ article.title }}
+          </h4>
+
+          <p
+            id="content"
+            class="text-gray-800 mt-2"
+            v-html="$md.render(article.content)"
+          >
+            {{ article.content }}
+          </p>
+
+          <div class="flex mt-5">
+            <img
+              class="w-6 rounded-full border-2 border-gray-300"
+              :src="image"
+              :alt="article.name"
+            />
+            <p class="ml-3">John Doe</p>
           </div>
-        </footer>
-      </nuxt-link>
-    </div>
+        </div>
+      </div>
+    </nuxt-link>
   </div>
 </template>
 
