@@ -12,6 +12,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      width: ['hover', 'focus'],
       colors: {
         main: theme.colors.gray['500'], // #38b2ac
       },
