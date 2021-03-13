@@ -1,29 +1,13 @@
 <template>
   <div class="flex-1 overflow-y-scroll">
-    <ContactComponent :online="false"></ContactComponent>
-    <div
-      v-for="i in 2"
-      :key="i"
-      class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative"
-    >
-      <div class="w-16 h-16 relative flex flex-shrink-0">
-        <img
-          class="shadow-md rounded-full w-full h-full object-cover"
-          src="https://randomuser.me/api/portraits/women/61.jpg"
-          alt=""
-        />
-      </div>
-      <div
-        class="flex-auto min-w-0 ml-4 mr- 6 hidden md:block group-hover:block"
-      >
-        <p class="">Angelina Jolie</p>
-        <div class="flex items-center text-sm text-gray-600">
-          <div class="min-w-0">
-            <p class="truncate">Ok, luego hablamos dsdsdddsdsdsdsddsdsdsds</p>
-          </div>
-          <p class="ml-2 whitespace-no-wrap">ahora</p>
-        </div>
-      </div>
+    <div v-for="contact in contacts" :key="contact.name">
+      <ContactComponent
+        :avatar="contact.avatar"
+        :name="contact.name"
+        :last_message="contact.last_message"
+        :last_time="contact.last_time"
+        :online="contact.online"
+      ></ContactComponent>
     </div>
   </div>
 </template>
@@ -32,8 +16,25 @@ export default {
   data: () => ({
     contacts: [
       {
-        name: 'Dani',
-        image: '',
+        avatar: 'https://randomuser.me/api/portraits/men/97.jpg',
+        name: 'Daniel Acosta',
+        last_message: 'Holaaaa',
+        last_time: 'ahora',
+        online: true,
+      },
+      {
+        avatar: 'https://randomuser.me/api/portraits/women/61.jpg',
+        name: 'Angelina Jolie',
+        last_message: 'Ok, luego hablamos dsdsdddsdsdsdsddsdsdsds',
+        last_time: 'ahora',
+        online: false,
+      },
+      {
+        avatar: 'https://randomuser.me/api/portraits/women/87.jpg',
+        name: 'Lucia Cevallos',
+        last_message: 'Jajajaja',
+        last_time: 'ahora',
+        online: true,
       },
     ],
   }),

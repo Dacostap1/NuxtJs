@@ -5,7 +5,7 @@
     <div class="w-16 h-16 relative flex flex-shrink-0">
       <img
         class="shadow-md rounded-full w-full h-full object-cover"
-        src="https://randomuser.me/api/portraits/men/97.jpg"
+        :src="avatar"
         alt=""
       />
 
@@ -20,12 +20,12 @@
     <div
       class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block no-read"
     >
-      <p>Tony Stark</p>
+      <p>{{ name }}</p>
       <div class="flex items-center text-sm">
         <div class="min-w-0">
-          <p class="truncate">Hey, Are you there?</p>
+          <p class="truncate">{{ last_message }}</p>
         </div>
-        <p class="ml-2 whitespace-no-wrap">10min</p>
+        <p class="ml-2 whitespace-no-wrap">{{ last_time }}</p>
       </div>
     </div>
     <div
@@ -36,12 +36,30 @@
 <script>
 export default {
   props: {
+    avatar: {
+      type: String,
+      default: '',
+    },
+    name: {
+      type: String,
+      default: '',
+    },
+    last_message: {
+      type: String,
+      default: '',
+    },
+    last_time: {
+      type: String,
+      default: '',
+    },
     online: {
       type: Boolean,
       default: true,
     },
   },
-  data() {},
+  data() {
+    return {}
+  },
 }
 </script>
 <style scoped>
