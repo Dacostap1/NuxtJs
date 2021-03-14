@@ -49,6 +49,7 @@ export default {
       '~/components/ui',
       '~/components/layout',
       '~/components/app',
+      '~/components/app/chat',
     ],
   },
 

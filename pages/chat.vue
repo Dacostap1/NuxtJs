@@ -20,12 +20,7 @@
           </section>
         </section>
         <section class="flex-auto flex flex-col border-l border-gray-800">
-          <div class="self-end">
-            <img
-              src="https://images.unsplash.com/photo-1611095965923-b8b19341cc29?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
-              alt=""
-            />
-          </div>
+          <ChatBody></ChatBody>
         </section>
       </main>
     </div>
