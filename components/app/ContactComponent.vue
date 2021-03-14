@@ -18,7 +18,8 @@
     </div>
 
     <div
-      class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block no-read"
+      class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block"
+      :class="[!visto ? 'no-read' : '']"
     >
       <p>{{ name }}</p>
       <div class="flex items-center text-sm">
@@ -29,6 +30,7 @@
       </div>
     </div>
     <div
+      v-if="!visto"
       class="bg-blue-700 w-3 h-3 rounded-full flex flex-shrink-0 hidden md:block group-hover:block"
     ></div>
   </div>
@@ -51,6 +53,10 @@ export default {
     last_time: {
       type: String,
       default: '',
+    },
+    visto: {
+      type: Boolean,
+      default: false,
     },
     online: {
       type: Boolean,

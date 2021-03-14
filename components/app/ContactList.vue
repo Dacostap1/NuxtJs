@@ -1,11 +1,12 @@
 <template>
   <div class="flex-1 overflow-y-scroll">
-    <div v-for="contact in contacts" :key="contact.name">
+    <div v-for="contact in filterContacts" :key="contact.name">
       <ContactComponent
         :avatar="contact.avatar"
         :name="contact.name"
         :last_message="contact.last_message"
         :last_time="contact.last_time"
+        :visto="contact.visto"
         :online="contact.online"
       ></ContactComponent>
     </div>
@@ -13,6 +14,7 @@
 </template>
 <script>
 export default {
+  props: ['search'],
   data: () => ({
     contacts: [
       {
@@ -20,6 +22,7 @@ export default {
         name: 'Daniel Acosta',
         last_message: 'Holaaaa',
         last_time: 'ahora',
+        visto: true,
         online: true,
       },
       {
@@ -27,6 +30,7 @@ export default {
         name: 'Angelina Jolie',
         last_message: 'Ok, luego hablamos dsdsdddsdsdsdsddsdsdsds',
         last_time: 'ahora',
+        visto: false,
         online: false,
       },
       {
@@ -38,5 +42,16 @@ export default {
       },
     ],
   }),
+  computed: {
+    filterContacts() {
+      return this.search === ''
+        ? this.contacts
+        : this.contacts.filter((contact) => {
+            return contact.name
+              .toLowerCase()
+              .includes(this.search.toLowerCase())
+          })
+    },
+  },
 }
 </script>

@@ -13,10 +13,10 @@
             <h1 class="text-md font-bold">Chat</h1>
           </header>
           <div class="search-box p-4 flex-none">
-            <SearchContact></SearchContact>
+            <SearchContact v-model="search"></SearchContact>
           </div>
           <section class="flex-1 h-full">
-            <ContactList></ContactList>
+            <ContactList :search="search"></ContactList>
           </section>
         </section>
         <section class="flex-auto flex flex-col border-l border-gray-800">
@@ -34,5 +34,11 @@
 <script>
 export default {
   // layout: 'nav',
+  name: 'ChatComponent',
+  data() {
+    return {
+      search: '',
+    }
+  },
 }
 </script>
