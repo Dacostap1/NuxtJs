@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex justify-between items-center p-3 hover:bg-gray-800 rounded-lg relative"
+    class="flex justify-between items-center p-3 rounded-lg relative hover:bg-gray-800"
   >
-    <div class="w-16 h-16 relative flex flex-shrink-0">
+    <div class="flex flex-shrink-0 w-16 h-16 relative">
       <img
         class="shadow-md rounded-full w-full h-full object-cover"
         :src="avatar"
@@ -31,7 +31,7 @@
     </div>
     <div
       v-if="!visto"
-      class="bg-blue-700 w-3 h-3 rounded-full flex flex-shrink-0 hidden md:block group-hover:block"
+      class="flex-shrink-0 w-3 h-3 rounded-full hidden bg-blue-700 md:block group-hover:block"
     ></div>
   </div>
 </template>
