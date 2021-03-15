@@ -20,7 +20,7 @@
     <div class="flex">
       <a
         href="#"
-        class="block rounded-full hover:bg-gray-700 bg-gray-800 w-10 h-10 p-2 ml-4"
+        class="block rounded-full hover:bg-gray-700 bg-gray-800 w-10 h-10 p-2"
       >
         <svg
           viewBox="0 0 20 20"

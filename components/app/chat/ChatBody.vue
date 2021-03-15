@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="flex-auto flex flex-col border-l border-gray-800">
     <ChatBodyHeader></ChatBodyHeader>
     <div class="flex-1 p-4 overflow-y-scroll">
       <MessageComponent
@@ -9,6 +9,7 @@
         class="my-2"
       ></MessageComponent>
     </div>
+    <ChatBodyFooter></ChatBodyFooter>
   </section>
 </template>
 <script>

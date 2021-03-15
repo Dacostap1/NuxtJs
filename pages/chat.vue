@@ -19,9 +19,8 @@
             <ContactList :search="search"></ContactList>
           </section>
         </section>
-        <section class="flex-auto flex flex-col border-l border-gray-800">
-          <ChatBody></ChatBody>
-        </section>
+
+        <ChatBody></ChatBody>
       </main>
     </div>
   </div>
