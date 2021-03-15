@@ -1,10 +1,10 @@
 <template>
   <div
-    class="h-screen w-full flex | antialiased text-gray-200 bg-gray-900 | overflow-hidden"
+    class="h-screen w-full flex | antialiased text-gray-200 bg-chat | overflow-hidden"
   >
     <main class="flex-grow flex flex-row min-h-0">
       <section
-        class="flex-none flex flex-col | group overflow-auto | w-24 hover:w-80 md:w-2/5 lg:max-w-sm | transition-all duration-300 ease-in-out"
+        class="flex-none flex flex-col | group overflow-auto | w-24 hover:w-2/5 md:w-2/5 lg:max-w-sm | transition-all duration-300 ease-in-out"
       >
         <header class="flex-none flex justify-center items-center p-4">
           <h1 class="text-md font-bold">Chat</h1>

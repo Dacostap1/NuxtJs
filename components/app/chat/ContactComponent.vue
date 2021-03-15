@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between items-center p-3 rounded-lg relative hover:bg-gray-800"
+    class="flex justify-between items-center p-3 rounded-lg relative hover:bg-msm-sent"
   >
     <div class="flex flex-shrink-0 w-16 h-16 relative">
       <img

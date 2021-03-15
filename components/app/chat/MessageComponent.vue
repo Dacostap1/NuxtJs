@@ -4,8 +4,8 @@
     :class="[message.type !== 'me' ? 'justify-start' : 'justify-end']"
   >
     <p
-      class="px-6 py-3 bg-blue-700 max-w-xs lg:max-w-md flex-initial"
-      :class="[message.type !== 'me' ? 'my-msm' : 'contact-msm']"
+      class="px-6 py-3 max-w-xs lg:max-w-md flex-initial"
+      :class="[message.type == 'me' ? 'my-msm' : 'contact-msm']"
       v-html="message.message"
     ></p>
   </div>
@@ -24,10 +24,18 @@ export default {
 </script>
 <style>
 .my-msm {
-  @apply bg-blue-700  rounded-r-full;
+  @apply rounded-l-full;
+}
+
+.my-msm {
+  background-color: theme('colors.msm-sent');
 }
 
 .contact-msm {
-  @apply bg-gray-800 rounded-l-full;
+  @apply rounded-r-full;
+}
+
+.contact-msm {
+  background-color: theme('colors.msm-received');
 }
 </style>

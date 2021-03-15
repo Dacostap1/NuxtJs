@@ -14,6 +14,9 @@ module.exports = {
     extend: {
       colors: {
         main: theme.colors.gray['500'], // #38b2ac
+        chat: '#1a202c',
+        'msm-sent': '#2D3748',
+        'msm-received': '#2b6cb0',
       },
     },
   },
