@@ -3,7 +3,7 @@
     <div class="flex items-center p-4">
       <button
         type="button"
-        class="flex flex-shrink-0 focus:outline-none mx-2 block text-blue-600 hover:text-blue-700 w-6 h-6"
+        class="flex flex-shrink-0 w-6 h-6 mx-2 text-blue-600 hover:text-blue-700 focus:outline-none"
       >
         <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
           <path
@@ -21,7 +21,7 @@
           />
           <button
             type="button"
-            class="absolute top-0 right-0 mt-2 mr-3 flex flex-shrink-0 focus:outline-none block text-blue-600 hover:text-blue-700 w-6 h-6"
+            class="absolute w-6 h-6 top-0 right-0 mt-2 mr-3 text-blue-600 focus:outline-none hover:text-blue-700"
           >
             <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
               <path
@@ -33,7 +33,7 @@
       </div>
       <button
         type="button"
-        class="flex flex-shrink-0 focus:outline-none mx-2 block text-blue-600 hover:text-blue-700 w-6 h-6"
+        class="flex flex-shrink-0 w-6 h-6 mx-2 text-blue-600 focus:outline-none hover:text-blue-700"
       >
         <svg viewBox="0 0 20 20" class="w-full h-full fill-current">
           <path
