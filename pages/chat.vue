@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-screen w-full flex | antialiased text-gray-200 bg-chat | overflow-hidden"
+    class="content-container sm:h-screen w-full flex | antialiased text-gray-200 bg-chat | overflow-hidden"
   >
     <main class="flex-grow flex flex-row min-h-0">
       <section
@@ -26,7 +26,7 @@
 </template>
 <script>
 export default {
-  // layout: 'nav',
+  layout: 'nav',
   name: 'Chat',
   data() {
     return {
