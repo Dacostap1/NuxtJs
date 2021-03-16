@@ -1,6 +1,6 @@
 <template>
   <section class="flex-auto flex flex-col border-l border-gray-800">
-    <ChatBodyHeader></ChatBodyHeader>
+    <ChatBodyHeader :contactSelected="contactSelected"></ChatBodyHeader>
     <div class="flex-1 p-4 overflow-y-scroll">
       <MessageComponent
         v-for="(message, index) in messages"
@@ -14,6 +14,24 @@
 </template>
 <script>
 export default {
+  props: {
+    contactSelected: {
+      default: () => {
+        return {}
+      },
+    },
+  },
+  watch: {
+    contactSelected: {
+      handler() {
+        console.log(this.contactSelected)
+        this.$nuxt.$loading.start()
+        setTimeout(() => this.$nuxt.$loading.finish(), 200)
+      },
+      deep: true,
+    },
+  },
+
   data() {
     return {
       messages: [

@@ -6,14 +6,14 @@
       <div class="flex flex-shrink-0 relative w-12 h-12 mr-4">
         <img
           class="shadow-md rounded-full w-full h-full object-cover"
-          src="https://randomuser.me/api/portraits/men/97.jpg"
+          :src="contactSelected.avatar"
           alt=""
         />
       </div>
 
       <div class="text-sm">
-        <p class="font-bold">Scarlet</p>
-        <p class="">Activo hace 1 min</p>
+        <p class="font-bold">{{ contactSelected.name }}</p>
+        <p class="">{{ contactSelected.last_time }}</p>
       </div>
     </div>
 
@@ -34,3 +34,14 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    contactSelected: {
+      default: () => {
+        return {}
+      },
+    },
+  },
+}
+</script>
