@@ -32,6 +32,11 @@
 export default {
   name: 'Chat',
   layout: 'nav',
+  middleware: ['auth-admin'],
+
+  meta: {
+    permissions: ['show-chat'],
+  },
 
   data() {
     return {
