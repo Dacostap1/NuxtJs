@@ -4,15 +4,19 @@
   >
     <main class="flex-grow flex flex-row min-h-0">
       <section
-        class="flex-none flex flex-col | group overflow-auto | w-24 hover:w-3/5 md:w-2/5 lg:max-w-sm | transition-all duration-300 ease-in-out"
+        class="flex-none flex flex-col | group overflow-auto | md:w-2/5 lg:max-w-sm | transition-all duration-300 ease-in-out"
+        :class="[showContacts ? 'w-3/5' : 'w-24']"
       >
         <header class="flex-none flex justify-center items-center p-4">
           <h1 class="text-md font-bold">Chat</h1>
         </header>
         <div class="flex-none p-4">
-          <SearchContact v-model="search"></SearchContact>
+          <SearchContact
+            v-model="search"
+            @click.native="showContacts = true"
+          ></SearchContact>
         </div>
-        <section class="flex-1 h-full">
+        <section id="contact-list" class="flex-1 h-full">
           <ContactList
             :search="search"
             @selectedContact="selectedContact"
@@ -26,8 +30,9 @@
 </template>
 <script>
 export default {
-  layout: 'nav',
   name: 'Chat',
+  layout: 'nav',
+
   data() {
     return {
       search: '',
@@ -36,7 +41,16 @@ export default {
         name: '',
         last_time: '',
       },
+      showContacts: true,
+      initialPosition: null,
+      currentPosition: null,
+      diff: null,
     }
+  },
+  mounted() {
+    const contactList = document.getElementById('contact-list')
+    contactList.addEventListener('touchstart', this.handleTouchStart, false)
+    contactList.addEventListener('touchend', this.handleTouchEnd, false)
   },
   methods: {
     selectedContact(contact) {
@@ -44,6 +58,18 @@ export default {
       this.contactSelected.avatar = contact.avatar
       this.contactSelected.name = contact.name
       this.contactSelected.last_time = contact.last_time
+    },
+    handleTouchStart(e) {
+      this.initialPosition = e.touches[0].pageX
+    },
+    handleTouchEnd(e) {
+      this.currentPosition = e.changedTouches[0].pageX
+      this.diff = this.currentPosition - this.initialPosition
+      if (this.diff > 0) {
+        this.showContacts = true
+      } else {
+        this.showContacts = false
+      }
     },
   },
 }

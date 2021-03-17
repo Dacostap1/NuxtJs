@@ -18,7 +18,7 @@
     </div>
 
     <div
-      class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block"
+      class="flex-auto min-w-0 ml-4 mr-6 block"
       :class="[!visto ? 'no-read' : '']"
     >
       <p>{{ name }}</p>
@@ -31,7 +31,7 @@
     </div>
     <div
       v-if="!visto"
-      class="flex-shrink-0 w-3 h-3 rounded-full hidden bg-blue-700 md:block group-hover:block"
+      class="flex-shrink-0 w-3 h-3 rounded-full block bg-blue-700"
     ></div>
   </div>
 </template>
