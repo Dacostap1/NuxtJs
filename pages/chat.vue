@@ -65,9 +65,10 @@ export default {
     handleTouchEnd(e) {
       this.currentPosition = e.changedTouches[0].pageX
       this.diff = this.currentPosition - this.initialPosition
-      if (this.diff > 0) {
+      if (this.diff > 35) {
+        // Ampliando el rango de mov
         this.showContacts = true
-      } else {
+      } else if (this.diff < -35) {
         this.showContacts = false
       }
     },
