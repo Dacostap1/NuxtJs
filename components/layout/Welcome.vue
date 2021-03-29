@@ -1,15 +1,15 @@
 <template>
-  <section id="welcome" class="overflow-hidden">
-    <div class="grid grid-cols-8 h-screen">
-      <div class="image col-start-1 col-span-4 hidden sm:block">
+  <section id="welcome" class="h-screen">
+    <div class="grid grid-cols-8 min-h-full">
+      <div class="image col-start-1 col-span-4 hidden md:block h-screen">
         <img
           src="~/assets/welcome.png"
           alt="welcome"
-          class="h-full object-cover"
+          class="object-cover h-full w-full"
         />
       </div>
       <div
-        class="welcome col-start-2 col-span-6 sm:col-start-6 sm:col-span-2 flex flex-col space-y-4 justify-center items-center"
+        class="welcome col-start-2 col-span-6 md:col-start-6 md:col-span-2 flex flex-col space-y-4 justify-center items-center"
       >
         <h1 class="self-start font-sans font-light text-6xl flex-shrink">
           Welcome!
