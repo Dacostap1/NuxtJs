@@ -17,7 +17,9 @@ module.exports = {
         chat: '#1a202c',
         'msm-sent': '#2D3748',
         'msm-received': '#2b6cb0',
+        profile: '#D3C3BC',
       },
+      fontFamily: { sans: ['Roboto', 'sans-serif'] },
     },
   },
   variants: {
