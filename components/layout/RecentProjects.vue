@@ -1,6 +1,6 @@
 <template>
-  <section id="recent-projects  h-auto md:h-screen ">
-    <div class="grid grid-cols-8 h-auto">
+  <section id="recent-projects" class="h-auto">
+    <div class="grid grid-cols-8">
       <div
         class="col-span-8 lg:col-span-4 flex flex-col items-center justify-center bg-profile p-4 md:p-6 font-sans space-y-6"
       >

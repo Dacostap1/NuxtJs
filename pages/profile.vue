@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="profile">
     <Welcome></Welcome>
     <RecentProjects></RecentProjects>
     <Habilities></Habilities>

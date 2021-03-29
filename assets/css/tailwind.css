@@ -11,6 +11,9 @@
 
 @layer utilities {
 
+  html{
+    scroll-behavior: smooth;
+  }
   .content-container {
     height: calc(100vh - theme('spacing.14'));
   }
